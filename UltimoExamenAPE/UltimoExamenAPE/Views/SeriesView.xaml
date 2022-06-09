@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UltimoExamenAPE.Views.SeriesView">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Series}" x:Name="listSeries">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Button HorizontalOptions="FillAndExpand"
+                                        Text="{Binding Nombre}" Command="{Binding BindingContext.ShowSerie, Source={x:Reference listSeries}}"
+                                        CommandParameter="{Binding IdSerie}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
